@@ -1,0 +1,111 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to bottom, #ffcccb, #ffe4b5);
+  font-family: Comic Sans MS, cursive, sans-serif;
+}
+
+/* Start Screen */
+#start-screen {
+  text-align: center;
+}
+
+#start-screen h1 {
+  font-size: 48px;
+  color: #333;
+}
+
+#start-screen p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+#start-button {
+  padding: 10px 20px;
+  font-size: 20px;
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+#start-button:hover {
+  transform: scale(1.1);
+}
+
+/* Game Container */
+.hidden {
+  display: none;
+}
+
+#game-container {
+  position: relative;
+  width: 400px;
+  height: 600px;
+  background-color: #ffdab9;
+  overflow: hidden;
+  border: 4px dashed #ff4500;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+#bird {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEidAIagVeiKSQcrRHmgIQpspQUhLJ98J7YUUb_dJCg-2QfmdqnwbOpMwrheKOk8gCuHC_9nAbSN4vGWlZ7S2sdjRMlKqP2R3Yjzj4i4wrUACO4MdnmPZOtGxkviaqi1leiDcVDksX8S0Dyy9yknO6KpTis7Tdb3N1sEsffhhK_YMFaSgH9nMt3WV1LpPEyt/s1600/IMG-20250121-WA0000.jpg');
+  background-size: cover;
+  top: 50%;
+  left: 50px;
+  transform: translateY(-50%);
+  border: 2px solid #ff4500;
+  border-radius: 50%;
+  animation: wobble 0.5s infinite;
+}
+
+@keyframes wobble {
+  0%, 100% {
+    transform: translateY(-50%) rotate(-10deg);
+  }
+  50% {
+    transform: translateY(-50%) rotate(10deg);
+  }
+}
+
+.pipe {
+  position: absolute;
+  width: 60px;
+  background-color: #32cd32;
+  border: 3px solid #006400;
+  border-radius: 10px;
+}
+
+.pipe.upper {
+  top: 0;
+}
+
+.pipe.lower {
+  bottom: 0;
+}
+
+#score {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+  text-shadow: 1px 1px 2px white;
+    }
